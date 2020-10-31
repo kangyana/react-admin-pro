@@ -3,7 +3,8 @@ import { Tabs } from 'antd';
 import { history, useSelector, useDispatch } from 'umi';
 import { NAMESPACE, LayoutState } from '@/models/layout';
 import { TabItem } from '@/models/data.d';
-import { flatten } from '@/utils/utils'
+import { flatten } from '@/utils/utils';
+import DraggableTabs from '@/components/DraggableTabs';
 import routes from '../../../config/routes';
 import { TargetKey } from '../data.d';
 
@@ -81,7 +82,7 @@ const TabsLayout: React.FC<Props> = (props: Props) => {
   );
 
   return (
-    <Tabs
+    <DraggableTabs
       type="editable-card"
       hideAdd
       onChange={tabOnChange}
@@ -99,7 +100,7 @@ const TabsLayout: React.FC<Props> = (props: Props) => {
           {pane.content}
         </TabPane>
       ))}
-    </Tabs>
+    </DraggableTabs>
   );
 };
 
